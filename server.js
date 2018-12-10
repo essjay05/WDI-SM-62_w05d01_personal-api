@@ -7,7 +7,8 @@ const
     app = express(),
     path = require('path'),
     logger = require('morgan'),
-    joyModel = require('./models/joy')
+    joyModel = require('./info/joy'),
+    dataEnds = require('./info/dataEnds'),
     PORT = process.env.PORT || 3000;
 
 // DATABASE
@@ -22,9 +23,12 @@ app.use(logger('dev'));
 
 
 // ROUTES
-app.get('/api/profile', (req, res) => {
-    res.json( joyModel );
-})
+const projectRouter = require('./routers/projectRouter');
+app.use('/api/projects', projectRouter);
+
+// HARD-CODED ROUTES/PATHS
+app.get('/api/profile', (req, res) => { res.json( joyModel ); });
+app.get('/api', (req, res) => { res.json( dataEnds ); })
 
 // LISTENING PORT
 app.listen(PORT, err => {
