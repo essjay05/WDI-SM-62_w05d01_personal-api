@@ -7,6 +7,7 @@ const
     app = express(),
     path = require('path'),
     logger = require('morgan'),
+    joyModel = require('./models/joy')
     PORT = process.env.PORT || 3000;
 
 // DATABASE
@@ -21,15 +22,8 @@ app.use(logger('dev'));
 
 
 // ROUTES
-app.get('/profile', (req, res) => {
-    if (err) res.json({ success: false, err });
-    res.json({
-        success: true,
-        name: "Joy Serquina",
-        githubUsername
-
-    })
-
+app.get('/api/profile', (req, res) => {
+    res.json( joyModel );
 })
 
 // LISTENING PORT
