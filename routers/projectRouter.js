@@ -6,10 +6,10 @@ const
 
 // ROUTES / PATHS
 router.get('/', Project.index)
-// router.get('/:id', Project.show)
+router.get('/:id', Project.show)
 router.post('/', Project.create)
-// router.patch('/:id', Project.update)
-// router.delete('/:id', Project.destroy)
+router.patch('/:id', Project.update)
+router.delete('/:id', Project.destroy)
 
 // MAKE EXPORTABLE
 module.exports = router
