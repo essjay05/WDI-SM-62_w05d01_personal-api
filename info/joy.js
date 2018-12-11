@@ -1,3 +1,5 @@
+// let dayAge = 
+
 // CREATE .json of JOY data to be exported/referenced in '/api/profile'
 module.exports = {
     success: true,
@@ -21,4 +23,5 @@ module.exports = {
             city: "San Francisco, CA"
         }
     ]
+    // ageInDays: `${dayAge}`
 }

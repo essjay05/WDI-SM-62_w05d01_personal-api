@@ -5,10 +5,11 @@ const Project = require('../models/project');
 
 module.exports = {
     index: (req, res) => {
-        Project.find({}, (err, projects) => {
+        Project.find(req.query, (err, projects) => {
+            // let msg = req.query.msg ? req.query.msg : "!";
             if (err) res.json({ success: false, err });
             res.json({ success: true, projects });
-        })
+        }).limit(parseInt(req.query))
     },
 
     show: (req, res) => {
