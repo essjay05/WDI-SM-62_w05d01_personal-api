@@ -18,6 +18,10 @@ require('./db');
 
 
 // MIDDLEWARE
+// CONNECT TO PUBLIC FOLDER:
+app.use(express.static(path.join(__dirname, 'public','views')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.json());
 app.use(logger('dev'));
 

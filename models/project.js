@@ -4,9 +4,6 @@ const mongoose = require('mongoose');
 // CREATE MONGOOSE SCHEMA 
 const Schema = mongoose.Schema;
 
-// CREATE CONSTANT FOR ObjectId
-const ObjectId = mongoose.Schema.Types.ObjectId;
-
 // CREATE NEW/TOPIC SCHEMA
 const ProjectSchema = new Schema ({
     name: String,
