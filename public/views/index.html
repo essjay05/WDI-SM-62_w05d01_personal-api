@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="/public/css/main.css" />
+    <title>Define Joy: DASHBOARD</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Rock+Salt" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="/public/js/main.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 <body>
-    <main>
-        <h1>Joy S. Project Search</h1>
-        <form>
-                <input type="text" placeholder="Enter Search Term..."/>
-                <input type="submit" />
-        </form>
-        <div class="dropdownLimit">
-            <button onclick="setLimit()" class="dropdownLimit dropBtn">Dropdown</button>
-            <div class="dropdownLimit">
-                <a href="#show1">Show 1</a>
-                <a href="#show2">Show 2</a>
-                <a href="#show4">Show 4</a>
+    <div class="mainContainer">
+        
+        <!-- HEADER -->
+        <header>
+            <h1>Joy S.</h1>
+        </header>
+
+        <!--  -->
+        <main>
+            <nav> </nav>
+            
+                <!-- PROJECT SUBMISSION FORM -->
+                <fieldset>
+                <legend><h2>Project Submission Form</h2></legend>
+                <div class="projectForm">
+                    <form action="" class="formGrid">
+                            <input name="name" type="text" placeholder="Project NAME..."/>
+                            <textarea name="description" type="text" placeholder="Project DESCRIPTION..."></textarea>
+                            <input name="ghUrl" type="text" placeholder="Github URL..."/>
+                            <input name="deployedUrl" type="text" placeholder="Deployed URL..."/>
+                            <input name="imgUrl" type="text" placeholder="Screenshot URL..."/>
+                            <input name="date" type="text" placeholder="Release Date..."/>
+                            <input name="submit" type="submit" value="SUBMIT" />
+                    </form>
+                </div>
+                </fieldset>
+
+                <fieldset>
+                        <legend><h2>Project Search Form</h2></legend>
+                        <div class="searchForm">
+                            <form action="" class="searchGrid">
+                                    <input name="sName" type="text" placeholder="Project NAME..."/>
+                                    <textarea name="sDescription" type="text" placeholder="Project DESCRIPTION..."></textarea>
+                                    <input name="sGhUrl" type="text" placeholder="Github URL..."/>
+                                    <input name="sDeployedUrl" type="text" placeholder="Deployed URL..."/>
+                                    <input name="sImgUrl" type="text" placeholder="Screenshot URL..."/>
+                                    <input name="sDate" type="text" placeholder="Release Date..."/>
+                                    <input name="sLimit" type="number" placeholder="Limit search return to view #" />
+                                    <input name="searchSubmit" type="submit" value="SUBMIT" />
+                            </form>
+                        </div>
+                </fieldset>
             </div>
-        </div>
-        <div id="images"></div>
-    </main> 
+            <!-- <div class="dropdownLimit">
+                <button onclick="setLimit()" class="dropdownLimit dropBtn">Dropdown</button>
+                <div class="dropdownLimit">
+                    <a href="#show1">Show 1</a>
+                    <a href="#show2">Show 2</a>
+                    <a href="#show4">Show 4</a>
+                </div>
+            </div> -->
+            <div id="images"></div>
+        </main> 
 </body>
 </html>

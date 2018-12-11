@@ -29,6 +29,11 @@ app.use(logger('dev'));
 // ROUTES
 const projectRouter = require('./routers/projectRouter');
 app.use('/api/projects', projectRouter);
+   
+    // ROUTE TO CONNECT VIEWS TO DATABASE
+    app.get('/', (req, res) => {
+        res.sendFile('views/index.html')};
+    });
 
 // HARD-CODED ROUTES/PATHS
 app.get('/api/profile', (req, res) => { res.json( joyModel ); });

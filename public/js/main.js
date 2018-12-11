@@ -1,27 +1,10 @@
-(function() {}
 
 console.log('Loaded');
 
-function fetchImages(searchTerm) {
-    axios.get(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=DDylHjODKL4waP5jxgAIDYThfkAnKzjD&limit=25`)
-        .then(res => {
-            let imageEl = document.getElementById('images');
-        
-            res.data.featuresforEach( i => {
-                let image = document.createElement('img');
-                image.src = i.images.original.url;
-                imageEl.appendChild(image);
-            });
-        });
-    };
+// USE AXIOS TO PING YOUR API TO GET THE LIST OF PROJECTS
+axios.get('/api/projects')
+    .then(res => {
+        console.log(res.data)});
 
 // CHANGE TO ADD SEARCH TO GIPHY
-document.querySelector("form").addEventListener("submit", e => {
-    e.preventDefault();
-    let searchTerm = e.target[0].value;
-    fetchImages(searchTerm);
-    e.target[0].value = "";
-    // document.getElementById("images").innerHTML = "";
-    imageEl.innerHTML = "";
-});
-}) ();
+
