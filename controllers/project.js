@@ -4,13 +4,46 @@ const Project = require('../models/project');
 // CREATE CONRTOLS/JAVASCRIPT FUNCTIONS FOR CRUD:
 
 module.exports = {
+    // index: (req, res) => {
+    //     console.log(req.query);
+    //     Project.find({}, (err, projects) => {
+    //         if (err) res.json({ success: false, err });
+    //         projects.forEach( p => {
+    //             console.log(p.name);
+    //             if (req.query.name) {
+    //                 if (req.query.name.toLowerCase() == p.name.toLowerCase()) {
+    //                     console.log("Hi")
+    //                 }
+    //             }
+    //         })
+    //         res.json({ success: true, projects });
+    //     }).limit(parseInt(req.query))
+    // },
+
     index: (req, res) => {
-        Project.find(req.query, (err, projects) => {
-            // let msg = req.query.msg ? req.query.msg : "!";
+        
+        console.log(req.query);
+
+        Project.find({}, (err, projects) => {
             if (err) res.json({ success: false, err });
+            projects.forEach(p => {
+            
+                console.log(p.name);
+                if (req.query.name) {
+                    if (req.query.name.toLowerCase() == p.name.toLowerCase()) {
+                        console.log("hi")
+                        res.json({ success: true, p })
+                    }
+                    else {
+                        res.json({ success: true, projects });
+                    }
+
+                } else {
+                    res.json({ success: true, projects });        
+                }
+            });
             res.json({ success: true, projects });
-        }).limit(parseInt(req.query))
-    },
+        }).limit(parseInt(req.query.limit));
 
     show: (req, res) => {
         Project.findById(req.params.id, (err, project) => {
