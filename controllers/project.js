@@ -38,6 +38,15 @@ module.exports = {
             if (err) res.json({ success: false, err });
             res.json({ success: true, deletedProject });
         })
-    }
+    },
+
+    // CRUD STRETCH GOALS:
+        // LIMIT PROJECT SEARCH TO TWO:
+    index2: (req, res) => {
+        Project.find({}, (err, projects) => {
+            if (err) res.json({ success: false, err });
+            res.json({ success: true, projects });
+        }).limit(2)
+    },
 
 }

@@ -1,0 +1,21 @@
+h1 {
+    color: red;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#images img {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
